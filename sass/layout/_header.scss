@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as breakpoints;
+
+.header {
+  /*
+  position: fixed;
+  display: inline-block;
+  line-height: 5rem;
+  height: 5rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  
+  &__text{
+    font-size:20cqw;
+  }
+  */
+  
+  display: flex;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: -1;
+  //height:100%;  
+  
+  svg{
+    fill: rgb(0, 0, 0);
+    width: 100%;
+    max-width: unset;
+    padding: 0 1vw;
+    margin-top: -1vw;
+  }
+
+
+  @media (min-width: breakpoints.$md){
+    svg{
+      max-width: 60vw;
+    }
+  }
+}
