@@ -6,6 +6,9 @@
 body{
   font-family: roboto, sans-serif;
   font-size: 1rem;
+  // Keeps the page scrollable even with every section closed, so the
+  // hero model's scroll-driven spin (index.js) still works on load.
+  min-height: 250vh;
 }
 
 #main_container
