@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build:css": "sass sass/style.scss style/style.css",
+    "watch:css": "sass --watch sass/style.scss:style/style.css"
+  },
   "dependencies": {
     "bootstrap": "^5.3.8",
     "sass": "^1.100.0"
