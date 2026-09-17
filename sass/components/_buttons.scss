@@ -2,13 +2,12 @@
 
 .btn-primary{
   background-color: vars.$zee_white;
-  border-color: vars.$zee_black;
+  border: none;
   color: vars.$zee_black;
 
   &:hover,
   &:focus{
     background-color: vars.$zee_black;
-    border-color: vars.$zee_black;
     color: vars.$zee_white;
   }
 }

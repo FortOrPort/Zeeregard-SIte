@@ -16,12 +16,11 @@ body {
 
 .btn-primary {
   background-color: #fff;
-  border-color: #000;
+  border: none;
   color: #000;
 }
 .btn-primary:hover, .btn-primary:focus {
   background-color: #000;
-  border-color: #000;
   color: #fff;
 }
 
