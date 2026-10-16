@@ -7,6 +7,10 @@
     "ogImage": "https://zeeregard.com/content/Zeeregard.jpg",
     "ogUrl": "https://zeeregard.com/"
   },
+  "home": {
+    "heading": "Content creator",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus reprehenderit, molestias, perferendis iusto dicta esse modi voluptas voluptate veritatis nulla omnis corporis. Magnam, repellendus reprehenderit nam sequi delectus possimus?"
+  },
   "youtube": [
     "https://youtu.be/dyZzxjVQOUA",
     "https://www.youtube.com/watch?v=dyZzxjVQOUA",

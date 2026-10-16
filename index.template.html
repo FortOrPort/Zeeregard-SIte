@@ -80,13 +80,13 @@
         <div id="homeSection" class="d-none section container">
           <div class="row">
             <div class="col">
-              <h3>Content creator</h3>
+              <h3 id="homeHeading"></h3>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus reprehenderit, molestias, perferendis iusto dicta esse modi voluptas voluptate veritatis nulla omnis corporis. Magnam, repellendus reprehenderit nam sequi delectus possimus?
+              <p id="homeBody">
+                <!-- Populated at runtime by js/content.js from config/site.json's "home" field -->
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@
             </div>
           </div>
           <div id="musicEmbeds" class="row">
-            <!-- Populated at runtime by js/embeds.js from config/site.json's "soundcloud" list -->
+            <!-- Populated at runtime by js/content.js from config/site.json's "soundcloud" list -->
           </div>
         </div>
 
@@ -108,7 +108,7 @@
             <h3 class="col">Videos</h3>
           </div>
           <div id="videosEmbeds" class="row">
-            <!-- Populated at runtime by js/embeds.js from config/site.json's "youtube" list -->
+            <!-- Populated at runtime by js/content.js from config/site.json's "youtube" list -->
           </div>
         </div>
 
@@ -117,6 +117,6 @@
     </div>
 
     <script src="/js/index.js"></script>
-    <script src="/js/embeds.js"></script>
+    <script src="/js/content.js"></script>
   </body>
 </html>

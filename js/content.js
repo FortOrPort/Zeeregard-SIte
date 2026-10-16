@@ -1,4 +1,4 @@
-// ---- Populates Music/Videos sections from config/site.json ----
+// ---- Populates Home text and Music/Videos embeds from config/site.json ----
 const YOUTUBE_ID_PATTERN =
   /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/;
 
@@ -23,7 +23,7 @@ function getSoundCloudEmbedUrl(url) {
 function createVideoEmbed(url) {
   const embedUrl = getYouTubeEmbedUrl(url);
   if (!embedUrl) {
-    console.warn(`embeds.js: couldn't parse a YouTube video ID from "${url}"`);
+    console.warn(`content.js: couldn't parse a YouTube video ID from "${url}"`);
     return null;
   }
 
@@ -61,19 +61,22 @@ function createMusicEmbed(url) {
   return col;
 }
 
-async function populateEmbeds() {
+function populateHome(config) {
+  const heading = document.getElementById("homeHeading");
+  const body = document.getElementById("homeBody");
+  if (!config.home) return;
+
+  if (heading && config.home.heading) {
+    heading.textContent = config.home.heading;
+  }
+  if (body && config.home.body) {
+    body.textContent = config.home.body;
+  }
+}
+
+function populateEmbeds(config) {
   const videosContainer = document.getElementById("videosEmbeds");
   const musicContainer = document.getElementById("musicEmbeds");
-  if (!videosContainer && !musicContainer) return;
-
-  let config;
-  try {
-    const response = await fetch("/config/site.json");
-    config = await response.json();
-  } catch (err) {
-    console.error("embeds.js: failed to load config/site.json", err);
-    return;
-  }
 
   (config.youtube || []).forEach((url) => {
     const embed = createVideoEmbed(url);
@@ -85,4 +88,18 @@ async function populateEmbeds() {
   });
 }
 
-populateEmbeds();
+async function populateFromConfig() {
+  let config;
+  try {
+    const response = await fetch("/config/site.json");
+    config = await response.json();
+  } catch (err) {
+    console.error("content.js: failed to load config/site.json", err);
+    return;
+  }
+
+  populateHome(config);
+  populateEmbeds(config);
+}
+
+populateFromConfig();
