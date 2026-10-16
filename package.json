@@ -2,8 +2,10 @@
   "scripts": {
     "build:css": "sass sass/style.scss style/style.css",
     "watch:css": "sass --watch sass/style.scss:style/style.css",
+    "build:html": "node scripts/build-html.js",
+    "build": "npm run build:html && npm run build:css",
     "serve": "serve . -l 8080",
-    "start": "npm run build:css && npm run serve"
+    "start": "npm run build && npm run serve"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

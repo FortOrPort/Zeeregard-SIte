@@ -1,0 +1,18 @@
+{
+  "site": {
+    "title": "Zeeregard",
+    "description": "Zeeregard's personal website",
+    "ogTitle": "Zeeregard",
+    "ogDescription": "Zeeregard's personal website",
+    "ogImage": "https://zeeregard.com/content/Zeeregard.jpg",
+    "ogUrl": "https://zeeregard.com/"
+  },
+  "youtube": [
+    "https://youtu.be/dyZzxjVQOUA",
+    "https://www.youtube.com/watch?v=dyZzxjVQOUA",
+    "https://youtube.com/embed/dyZzxjVQOUA"
+  ],
+  "soundcloud": [
+    "https://soundcloud.com/zeeregard/vertical-horizons"
+  ]
+}

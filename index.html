@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Generated into index.html by `npm run build:html` (config/site.json). Edit this file and config/site.json, not index.html directly. -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
     <meta property="og:url" content="https://zeeregard.com/">
     <meta property="og:type" content="website">
 
-    <meta name="description" content="Zeeregard's personal website"> 
+    <meta name="description" content="Zeeregard's personal website">
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/style/style.css">
@@ -59,7 +60,7 @@
       </svg>
     </div>
 
-    <div> 
+    <div>
       <nav class="sidebar">
         <button class="sidebar__item btn btn-primary" id="home" type="button">
           Home
@@ -68,14 +69,14 @@
         <button class="sidebar__item btn btn-primary" id="music" type="button">
           Music
         </button>
-        
+
         <button class="sidebar__item btn btn-primary" id="videos" type="button">
           Videos
         </button>
       </nav>
 
       <div id="content__body">
-        
+
         <div id="homeSection" class="d-none section container">
           <div class="row">
             <div class="col">
@@ -86,21 +87,19 @@
             <div class="col">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus reprehenderit, molestias, perferendis iusto dicta esse modi voluptas voluptate veritatis nulla omnis corporis. Magnam, repellendus reprehenderit nam sequi delectus possimus?
-              </p>  
+              </p>
             </div>
           </div>
         </div>
-      
+
         <div id="musicSection" class="d-none section container">
           <div class="row">
             <div class="col">
               <h3>Music</h3>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1377333118&color=%2364645c&auto_play=false&hide_related=false&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/zeeregard" title="zeeregard" target="_blank" style="color: #cccccc; text-decoration: none;">zeeregard</a> · <a href="https://soundcloud.com/zeeregard/vertical-horizons" title="Vertical Horizons" target="_blank" style="color: #cccccc; text-decoration: none;">Vertical Horizons</a></div>  
-            </div>
+          <div id="musicEmbeds" class="row">
+            <!-- Populated at runtime by js/embeds.js from config/site.json's "soundcloud" list -->
           </div>
         </div>
 
@@ -108,22 +107,16 @@
           <div class="row">
             <h3 class="col">Videos</h3>
           </div>
-          <div class="row">
-            <div class="col">
-              <iframe src="https://youtube.com/embed/dyZzxjVQOUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="col">
-              <iframe  src="https://youtube.com/embed/dyZzxjVQOUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="col">
-              <iframe  src="https://youtube.com/embed/dyZzxjVQOUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
+          <div id="videosEmbeds" class="row">
+            <!-- Populated at runtime by js/embeds.js from config/site.json's "youtube" list -->
           </div>
-          
+        </div>
+
       </div>
-    
+
     </div>
-    
+
     <script src="/js/index.js"></script>
+    <script src="/js/embeds.js"></script>
   </body>
 </html>
