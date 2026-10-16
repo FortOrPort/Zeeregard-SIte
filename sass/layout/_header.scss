@@ -33,9 +33,9 @@
   }
 
 
-  @media (min-width: breakpoints.$md){
+  @media (min-width: breakpoints.$lg){
     svg{
-      max-width: 60vw;
+      max-width: 70vw;
     }
   }
 }

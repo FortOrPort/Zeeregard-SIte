@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as vars;
 
 .btn-primary{
-  background-color: vars.$zee_white;
+  background-color: rgba(vars.$zee_white, 0.8);
   border: none;
   color: vars.$zee_black;
 

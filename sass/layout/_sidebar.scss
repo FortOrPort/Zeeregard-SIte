@@ -1,4 +1,4 @@
-@use "../abstracts/variables" as breakpoints;
+@use "../abstracts/variables" as vars;
 
 .sidebar {
   position: fixed;
@@ -19,13 +19,16 @@
     cursor: pointer;
   }
 
-  @media (min-width:  breakpoints.$md){
-    width: 9vw;
+  @media (min-width:  vars.$lg){
+    width: 9.7vw;
     padding-left: 0;
     padding-top: 9vw;
-    &__item{
-      transform: none;
-    }
     
+    &__item{
+      margin: 0 3px;
+      transform: none;
+      background-color: transparent;
+      width: fit-content;
+    }
   }
 }

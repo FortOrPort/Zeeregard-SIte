@@ -6,7 +6,6 @@
 body {
   font-family: roboto, sans-serif;
   font-size: 1rem;
-  min-height: 250vh;
 }
 
 #main_container {
@@ -15,7 +14,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   border: none;
   color: #000;
 }
@@ -53,9 +52,9 @@ body {
   padding: 0 1vw;
   margin-top: -1vw;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .header svg {
-    max-width: 60vw;
+    max-width: 70vw;
   }
 }
 
@@ -76,14 +75,17 @@ body {
   font-size: 1.4rem;
   cursor: pointer;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .sidebar {
-    width: 9vw;
+    width: 9.7vw;
     padding-left: 0;
     padding-top: 9vw;
   }
   .sidebar__item {
+    margin: 0 3px;
     transform: none;
+    background-color: transparent;
+    width: fit-content;
   }
 }
 
@@ -91,22 +93,42 @@ body {
   margin-left: 20vw;
   margin-right: 4vw;
   padding: 18vw 0 5rem;
+  min-height: 250vh;
 }
 #content__body .container {
   margin: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #content__body {
-    margin-left: 14vw;
+    margin-left: 11vw;
     padding: 12vw 0 5rem;
   }
 }
 #content__body .section {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 0.5rem;
   padding: 1.5rem 1.5rem 2rem;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+  outline: 3px solid black;
+  position: fixed;
+  top: 18vw;
+  left: 20vw;
+  max-height: 90vh;
+  max-width: 60vw;
+  overflow-y: auto;
+}
+@media (min-width: 576px) {
+  #content__body .section {
+    outline-width: 4px;
+  }
+}
+@media (min-width: 992px) {
+  #content__body .section {
+    top: 11vw;
+    left: 13vw;
+    max-width: 78vw;
+  }
 }
 
 #heroModel {

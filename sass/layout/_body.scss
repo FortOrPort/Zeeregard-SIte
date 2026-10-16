@@ -5,26 +5,42 @@
   margin-right: 4vw;
   padding: 18vw 0 5rem;
 
+  // Keeps the page scrollable even with every section closed, so the
+  // hero model's scroll-driven spin (index.js) still works on load.
+  min-height: 250vh;
+
+
   .container{
     margin: 0;
   }
 
-  @media (min-width: breakpoints.$md){
-    margin-left: 14vw;
+  @media (min-width: breakpoints.$lg){
+    margin-left: 11vw;
     padding: 12vw 0 5rem;
   }
 
-  #videosSection{
-    iframe{
-      
-    }
-  }
-
   .section{
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 0.5rem;
     padding: 1.5rem 1.5rem 2rem;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
+    outline: 3px solid black;
+    position: fixed;
+    top: 18vw;
+    left: 20vw;
+    max-height: 90vh;
+    max-width: 60vw;
+    overflow-y: auto;
+
+    @media(min-width: breakpoints.$sm){
+      outline-width: 4px;
+    }
+
+    @media (min-width: breakpoints.$lg){
+      top: 11vw;
+      left: 13vw;
+      max-width: 78vw;
+    }
   }
 }
