@@ -44,10 +44,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  color: currentColor;
+  background-color: #000;
+  color: #fff;
   pointer-events: none;
-  --mask-color: #fff;
+  --mask-color: #000;
 }
 .embed-loader__pill {
   position: relative;
