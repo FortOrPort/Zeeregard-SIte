@@ -20,6 +20,53 @@ function getSoundCloudEmbedUrl(url) {
   return `https://w.soundcloud.com/player/?${params.toString()}`;
 }
 
+function createEmbedLoader() {
+  const loader = document.createElement("span");
+  loader.className = "embed-loader";
+  loader.setAttribute("role", "status");
+
+  const pill = document.createElement("span");
+  pill.className = "embed-loader__pill";
+
+  const track = document.createElement("span");
+  track.className = "embed-loader__track";
+  track.setAttribute("aria-hidden", "true");
+  track.textContent = "░".repeat(10);
+  pill.appendChild(track);
+
+  ["█", "▓", "▒"].forEach((glyph, i) => {
+    const block = document.createElement("span");
+    block.className = `embed-loader__block embed-loader__block--${i + 1}`;
+    block.setAttribute("aria-hidden", "true");
+    block.textContent = glyph;
+    pill.appendChild(block);
+  });
+
+  const srText = document.createElement("span");
+  srText.className = "visually-hidden";
+  srText.textContent = "Loading";
+  pill.appendChild(srText);
+
+  loader.appendChild(pill);
+  return loader;
+}
+
+function wrapEmbedWithLoader(iframe, wrapperModifierClass) {
+  const wrapper = document.createElement("div");
+  wrapper.className = `embed-wrapper ${wrapperModifierClass}`;
+
+  wrapper.appendChild(iframe);
+  wrapper.appendChild(createEmbedLoader());
+
+  iframe.addEventListener(
+    "load",
+    () => wrapper.classList.add("is-loaded"),
+    { once: true }
+  );
+
+  return wrapper;
+}
+
 function createVideoEmbed(url) {
   const embedUrl = getYouTubeEmbedUrl(url);
   if (!embedUrl) {
@@ -40,7 +87,7 @@ function createVideoEmbed(url) {
   iframe.allowFullscreen = true;
   iframe.loading = "lazy";
 
-  col.appendChild(iframe);
+  col.appendChild(wrapEmbedWithLoader(iframe, "embed-wrapper--video"));
   return col;
 }
 
@@ -57,7 +104,7 @@ function createMusicEmbed(url) {
   iframe.allow = "encrypted-media";
   iframe.loading = "lazy";
 
-  col.appendChild(iframe);
+  col.appendChild(wrapEmbedWithLoader(iframe, "embed-wrapper--music"));
   return col;
 }
 

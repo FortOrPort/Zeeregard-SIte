@@ -23,6 +23,82 @@ body {
   color: #fff;
 }
 
+.embed-wrapper {
+  position: relative;
+}
+.embed-wrapper--video {
+  display: inline-block;
+}
+.embed-wrapper--music {
+  display: block;
+  width: 100%;
+  height: 166px;
+}
+.embed-wrapper.is-loaded .embed-loader {
+  display: none;
+}
+
+.embed-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: currentColor;
+  pointer-events: none;
+  --mask-color: #fff;
+}
+.embed-loader__pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 1em;
+  width: 10ch;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 1.5rem;
+  user-select: none;
+}
+.embed-loader__track {
+  position: absolute;
+  inset: 0;
+  white-space: nowrap;
+}
+.embed-loader__block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1ch;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--mask-color);
+  animation: embed-loader-conveyor 1.8s linear infinite;
+}
+.embed-loader__block--1 {
+  z-index: 30;
+  animation-delay: 0s;
+}
+.embed-loader__block--2 {
+  z-index: 20;
+  animation-delay: 0.05s;
+}
+.embed-loader__block--3 {
+  z-index: 10;
+  animation-delay: 0.1s;
+}
+
+@keyframes embed-loader-conveyor {
+  0% {
+    transform: translateX(-2ch);
+  }
+  100% {
+    transform: translateX(12ch);
+  }
+}
 .header {
   /*
   position: fixed;
