@@ -1,9 +1,35 @@
-@use "../abstracts/variables" as breakpoints;
+@use "../abstracts/variables" as vars;
 
 #homeSection__footer
 {
   a
   {
-    color: black;
+    color: vars.$zee_black;
+  }
+
+  &__icons
+  {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    svg
+    {
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+  }
+}
+
+#homeSection__contact
+{
+  color: vars.$zee_grey;
+
+  a
+  {
+    color: vars.$zee_grey_dark;
+    font-weight: bold;
+    text-decoration: underline; // "for now" -- delete this line to drop the underline later
   }
 }

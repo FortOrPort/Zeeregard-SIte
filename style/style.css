@@ -211,6 +211,29 @@ body {
   }
 }
 
+#homeSection__footer a {
+  color: #000;
+}
+#homeSection__footer__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#homeSection__footer__icons svg {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+#homeSection__contact {
+  color: #767676;
+}
+#homeSection__contact a {
+  color: #333333;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 #heroModel {
   position: fixed;
   inset: 0;
