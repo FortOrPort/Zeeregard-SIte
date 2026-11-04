@@ -18,7 +18,11 @@ body {
   border: none;
   color: #000;
 }
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: #000;
+  color: #fff;
+}
+.btn-primary:active:focus {
   background-color: #000;
   color: #fff;
 }
