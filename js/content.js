@@ -4,7 +4,7 @@ const YOUTUBE_ID_PATTERN =
 
 function getYouTubeEmbedUrl(url) {
   const match = url.match(YOUTUBE_ID_PATTERN);
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+  return match ? `https://www.youtube-nocookie.com/embed/${match[1]}` : null;
 }
 
 function getSoundCloudEmbedUrl(url) {
