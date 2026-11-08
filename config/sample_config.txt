@@ -1,0 +1,25 @@
+{
+  "site": {
+    "title": "Zeeregard",
+    "description": "Zeeregard's personal website",
+    "ogTitle": "Zeeregard",
+    "ogDescription": "Zeeregard's personal website",
+    "ogImage": "https://zeeregard.com/content/Zeeregard.jpg",
+    "ogUrl": "https://zeeregard.com/"
+  },
+  "home": {
+    "heading": "The Chudler",
+    "body": "Self made productions with a hint of youtube."
+  },
+  "youtube": [
+    { 
+      "url": "https://youtu.be/dyZzxjVQOUA",
+      "title": "Optional Field. Defaults to 'Zeeregard Video'."
+    },
+    { "url": "https://www.youtube.com/watch?v=dyZzxjVQOUA" },
+    { "url": "https://youtube.com/embed/dyZzxjVQOUA" }
+  ],
+  "soundcloud": [
+    "https://soundcloud.com/zeeregard/vertical-horizons"
+  ]
+}
