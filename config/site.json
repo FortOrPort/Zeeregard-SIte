@@ -12,9 +12,18 @@
     "body": "Self made productions with a hint of youtube."
   },
   "youtube": [
-    "https://youtu.be/dyZzxjVQOUA",
-    "https://www.youtube.com/watch?v=dyZzxjVQOUA",
-    "https://youtube.com/embed/dyZzxjVQOUA"
+    { 
+      "url": "https://youtu.be/dyZzxjVQOUA" ,
+      "title": "First Video"
+    },
+    { 
+      "url": "https://www.youtube.com/watch?v=dyZzxjVQOUA",
+      "title": "Second Video"
+    },
+    { 
+      "url": "https://youtube.com/embed/dyZzxjVQOUA",
+      "title": "Third Video"
+    }
   ],
   "soundcloud": [
     "https://soundcloud.com/zeeregard/vertical-horizons"

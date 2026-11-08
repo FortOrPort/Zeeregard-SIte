@@ -7,6 +7,8 @@ function getYouTubeEmbedUrl(url) {
   return match ? `https://www.youtube-nocookie.com/embed/${match[1]}` : null;
 }
 
+const DEFAULT_VIDEO_TITLE = "Zeeregard Video";
+
 function getSoundCloudEmbedUrl(url) {
   const params = new URLSearchParams({
     url,
@@ -67,19 +69,32 @@ function wrapEmbedWithLoader(iframe, wrapperModifierClass) {
   return wrapper;
 }
 
-function createVideoEmbed(url) {
-  const embedUrl = getYouTubeEmbedUrl(url);
+function createVideoEmbed(video) {
+  const url = typeof video === "object" && video !== null ? video.url : video;
+  const embedUrl = getYouTubeEmbedUrl(url || "");
   if (!embedUrl) {
     console.warn(`content.js: couldn't parse a YouTube video ID from "${url}"`);
     return null;
   }
 
+  const title =
+    typeof video?.title === "string" && video.title.trim()
+      ? video.title.trim()
+      : null;
+
   const col = document.createElement("div");
   col.className = "col";
 
+  if (title) {
+    const heading = document.createElement("h5");
+    heading.className = "embed-title";
+    heading.textContent = title;
+    col.appendChild(heading);
+  }
+
   const iframe = document.createElement("iframe");
   iframe.src = embedUrl;
-  iframe.title = "YouTube video player";
+  iframe.title = title || DEFAULT_VIDEO_TITLE;
   iframe.frameBorder = "0";
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; web-share";
@@ -125,8 +140,8 @@ function populateEmbeds(config) {
   const videosContainer = document.getElementById("videoEmbeds");
   const musicContainer = document.getElementById("musicEmbeds");
 
-  (config.youtube || []).forEach((url) => {
-    const embed = createVideoEmbed(url);
+  (config.youtube || []).forEach((video) => {
+    const embed = createVideoEmbed(video);
     if (embed) videosContainer?.appendChild(embed);
   });
 
