@@ -1,13 +1,40 @@
 // Conveyor-style loading animation: reimplements the visual mechanism of
 // loading-ui.com's "Conveyor Loop" component (credit: shaah1d, x.com/shaah1d)
-// in plain CSS -- not copied from source, which is a React/shadcn component.
 @use "../abstracts/variables" as vars;
+
+#videoEmbeds{
+  display: block;
+
+  @media (min-width: vars.$lg){
+    display: flex;
+  }
+
+  .col{
+    margin-bottom: 1rem;
+
+    @media (min-width: vars.$lg){
+      margin-bottom: 0;
+    }
+  }
+}
 
 .embed-wrapper {
   position: relative;
 
+  // Styling for responsive youtube embeds
   &--video {
-    display: inline-block; // shrink-wraps to the YouTube iframe's default 300x150 intrinsic box
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &--music {

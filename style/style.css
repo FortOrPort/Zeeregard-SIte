@@ -27,11 +27,38 @@ body {
   color: #fff;
 }
 
+#videoEmbeds {
+  display: block;
+}
+@media (min-width: 992px) {
+  #videoEmbeds {
+    display: flex;
+  }
+}
+#videoEmbeds .col {
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  #videoEmbeds .col {
+    margin-bottom: 0;
+  }
+}
+
 .embed-wrapper {
   position: relative;
 }
 .embed-wrapper--video {
-  display: inline-block;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.embed-wrapper--video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .embed-wrapper--music {
   display: block;
@@ -195,7 +222,7 @@ body {
   top: 18vw;
   left: 20vw;
   max-height: 90vh;
-  max-width: 60vw;
+  max-width: 75vw;
   overflow-y: auto;
 }
 @media (min-width: 576px) {

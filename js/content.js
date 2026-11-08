@@ -122,7 +122,7 @@ function populateHome(config) {
 }
 
 function populateEmbeds(config) {
-  const videosContainer = document.getElementById("videosEmbeds");
+  const videosContainer = document.getElementById("videoEmbeds");
   const musicContainer = document.getElementById("musicEmbeds");
 
   (config.youtube || []).forEach((url) => {
