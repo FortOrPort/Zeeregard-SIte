@@ -2,6 +2,8 @@
 
 #homeSection__footer
 {
+  margin-top: 1rem;
+
   a
   {
     color: vars.$zee_black;
@@ -24,12 +26,17 @@
 
 #homeSection__contact
 {
+  font-size: 0.9rem;
   color: vars.$zee_grey;
 
   a
   {
     color: vars.$zee_grey_dark;
     font-weight: bold;
-    text-decoration: underline; // "for now" -- delete this line to drop the underline later
+    text-decoration: underline;
+  }
+
+  p{
+    margin-bottom: 0;
   }
 }

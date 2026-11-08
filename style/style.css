@@ -210,7 +210,13 @@ body {
     max-width: 78vw;
   }
 }
+#content__body #homeSection {
+  padding-bottom: 1rem;
+}
 
+#homeSection__footer {
+  margin-top: 1rem;
+}
 #homeSection__footer a {
   color: #000;
 }
@@ -226,12 +232,16 @@ body {
 }
 
 #homeSection__contact {
+  font-size: 0.9rem;
   color: #767676;
 }
 #homeSection__contact a {
   color: #333333;
   font-weight: bold;
   text-decoration: underline;
+}
+#homeSection__contact p {
+  margin-bottom: 0;
 }
 
 #heroModel {

@@ -82,7 +82,7 @@ function createVideoEmbed(url) {
   iframe.title = "YouTube video player";
   iframe.frameBorder = "0";
   iframe.allow =
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share";
+    "accelerometer; autoplay; clipboard-write; encrypted-media; web-share";
   iframe.referrerPolicy = "strict-origin-when-cross-origin";
   iframe.allowFullscreen = true;
   iframe.loading = "lazy";
