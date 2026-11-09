@@ -36,7 +36,9 @@ if (heroModel) {
 }
 
 // ---- Sidebar navigation: show the clicked section, hide the rest ----
-document.querySelectorAll(".sidebar__item")?.forEach((button) => {
+const sidebarButtons = document.querySelectorAll(".sidebar__item");
+
+sidebarButtons?.forEach((button) => {
   button.addEventListener("click", function () {
     document.querySelectorAll(".section")?.forEach((element) => {
       if (element.id !== button.id + "Section") {
@@ -44,5 +46,11 @@ document.querySelectorAll(".sidebar__item")?.forEach((button) => {
       }
     });
     document.getElementById(button.id + "Section")?.classList.toggle("d-none");
+
+    sidebarButtons.forEach((btn) => {
+      const section = document.getElementById(btn.id + "Section");
+      const isExpanded = !!section && !section.classList.contains("d-none");
+      btn.setAttribute("aria-expanded", isExpanded);
+    });
   });
 });

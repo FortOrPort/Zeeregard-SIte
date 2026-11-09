@@ -14,8 +14,13 @@
 
     <meta name="description" content="{{DESCRIPTION}}">
 
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" type="image/jpeg" href="content/Zeeregard.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/style.css">
 
     <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 
@@ -62,15 +67,15 @@
 
     <div>
       <nav class="sidebar">
-        <button class="sidebar__item btn btn-primary" id="home" type="button">
+        <button class="sidebar__item btn btn-primary" id="home" type="button" aria-expanded="false">
           Home
         </button>
 
-        <button class="sidebar__item btn btn-primary" id="music" type="button">
+        <button class="sidebar__item btn btn-primary" id="music" type="button" aria-expanded="false">
           Music
         </button>
 
-        <button class="sidebar__item btn btn-primary" id="videos" type="button">
+        <button class="sidebar__item btn btn-primary" id="videos" type="button" aria-expanded="false">
           Videos
         </button>
       </nav>
@@ -138,7 +143,7 @@
 
     </div>
 
-    <script src="/js/index.js"></script>
-    <script src="/js/content.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/content.js"></script>
   </body>
 </html>

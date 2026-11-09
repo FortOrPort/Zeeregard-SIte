@@ -153,7 +153,7 @@ function populateEmbeds(config) {
 async function populateFromConfig() {
   let config;
   try {
-    const response = await fetch("/config/site.json");
+    const response = await fetch("config/site.json");
     config = await response.json();
   } catch (err) {
     console.error("content.js: failed to load config/site.json", err);
